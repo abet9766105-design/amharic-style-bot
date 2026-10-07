@@ -6,10 +6,6 @@ import asyncio
 import logging
 import os
 import random
-from flask import Flask
-from threading import Thread
-
-app = Flask('')
 
 @app.route('/')
 def home():
