@@ -3,7 +3,16 @@ import io
 import random
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageChops
 import os
+CATEGORIES = {
+    "normal": "መደበኛ"
+}
 
+STYLES = {
+    "default": "Default"
+}
+
+def render(text, style="default"):
+    return b""
 W, H = 1080, 1080
 HERE = os.path.dirname(os.path.abspath(__file__))
 # Put NotoSansEthiopic-Bold.ttf next to this file (free from Google Fonts).
