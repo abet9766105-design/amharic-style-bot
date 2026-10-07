@@ -1,2 +1,4 @@
 python-telegram-bot>=20
 Pillow
+python-telegram-bot
+flask
