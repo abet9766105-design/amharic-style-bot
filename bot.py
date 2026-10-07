@@ -118,7 +118,7 @@ def main():
     app.add_handler(MessageHandler(filters.PHOTO, on_photo))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, on_text))
     app.add_handler(CallbackQueryHandler(on_button))
-    url = os.environ.get("WEBHOOK_URL")
+    
     url = os.environ.get("WEBHOOK_URL")
     if url:  # server mode
         app.run_webhook(
@@ -132,5 +132,5 @@ def main():
         app.run_polling()
 
 
-if __name__ == "__main__":
+if name == "main":
     main()
