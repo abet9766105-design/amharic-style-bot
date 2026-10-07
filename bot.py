@@ -69,16 +69,16 @@ async def on_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text(msg + "አሁን ጽሑፍ ይጻፉ።")
 
-
 async def on_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text.strip()
     if not text:
         return
     if len(text) > MAX_LEN:
-        await update.message.reply_text(f"እባክዎ ከ{MAX_LEN} ፊደል ያነሰ ይጻፉ።")
+        await update.message.reply_text(f"ጽሑፉ ከ{MAX_LEN} ልክ ይበልጣል::")
         return
     context.user_data["text"] = text
-    await update.message.reply_text("ምድብ ይምረጡ 👇", reply_markup=categories_kb("photo" in context.user_data))
+    await update.message.reply_text("ምቅርን ይመርጡ 🎨", reply_markup=categories_kb("photo" in context.user_data))
+
 
 
 async def send_result(q, context, key):
