@@ -119,10 +119,16 @@ def main():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, on_text))
     app.add_handler(CallbackQueryHandler(on_button))
     url = os.environ.get("WEBHOOK_URL")
-    if url:   # server mode
-        app.run_webhook(listen="0.0.0.0", port=int(os.environ.get("PORT", "8080")),
-                        url_path=TOKEN, webhook_url=f"{url.rstrip('/')}/{TOKEN}")
-    else:     # your own computer / phone
+    url = os.environ.get("WEBHOOK_URL")
+    if url:  # server mode
+        app.run_webhook(
+            listen="0.0.0.0",
+            port=int(os.environ.get("PORT", "8080")),
+            url_path="",
+            webhook_url=f"{url.rstrip('/')}/"
+        )
+    else:
+        # your own computer / phone
         app.run_polling()
 
 
